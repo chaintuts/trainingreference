@@ -1,0 +1,287 @@
+[
+
+	{
+
+		"name" : "Starting Strength",
+		"author" : "Mark Rippetoe",
+		"source" : "Starting Strength Basic Barbell Training, 3rd Edition",
+		"customization" : "Discouraged",
+		"level" : "Novice",
+		"days" : [ "3" ],
+		"schedules" : [ "AxBxAxx" ],
+
+		"workouts" : 
+		[
+			{
+				"name" : "Workout A",
+				"work" : [ "3x5", "1x5 Deadlift", "3xf Chinups" ],
+				"exercises" : [ "Low Bar Squat", "Overhead Press", "Deadlift", "Chinups"]
+			},
+
+			{
+				"name" : "Workout B",
+				"work" : [ "3x5", "5x3 Power Clean", "3xf Chinups" ],
+				"exercises" : [ "Low Bar Squat", "Bench Press", "Power Clean", "Chinups"]
+			}
+		]
+		
+	},
+
+	{
+
+		"name" : "The Texas Method",
+		"author" : "Mark Rippetoe",
+		"source" : "Practical Programming for Strength Training, 3rd Edition",
+		"customization" : "Optional",
+		"level" : "Intermediate",
+		"days" : [ "3" ],
+		"schedules" : [ "AxBxCxx" ],
+
+		"workouts" : 
+		[
+			{
+				"name" : "Volume",
+				"work" : [ "5x5 90% of day C", "5x3 Power Clean" ],
+				"exercises" : [ "Low Bar Squat", "Bench Press", "Power Clean" ]
+			},
+
+			{
+				"name" : "Recovery",
+				"work" : [ "5x(2-3) 80-90% of day A", "3x5 Overhead Press", "3x3 90-95% of day A Power Clean" ],
+				"exercises" : [ "Low Bar Squat", "Overhead Press", "Power Clean"]
+			},
+
+			{
+				"name" : "Heavy",
+				"work" : [ "1x5" ],
+				"exercises" : [ "Low Bar Squat", "Bench Press", "Deadlift"]
+			}
+		]
+		
+	},
+
+	{
+
+		"name" : "The Texas Method for Powerlifting",
+		"author" : "Mark Rippetoe",
+		"source" : "Practical Programming for Strength Training, 3rd Edition",
+		"customization" : "Optional",
+		"level" : "Intermediate",
+		"days" : [ "3" ],
+		"schedules" : [ "AxBxCxx" ],
+
+		"workouts" : 
+		[
+			{
+				"name" : "Volume",
+				"work" : [ "(3-5)x5 70% of day C", "(3-5)x3 Power Clean" ],
+				"exercises" : [ "Low Bar Squat", "Bench Press", "Power Clean" ]
+			},
+
+			{
+				"name" : "Recovery",
+				"work" : [ "(2-3)x5 Light Squat", "3x5 Overhead Press", "3x3 Light Power Clean" ],
+				"exercises" : [ "Low Bar Squat", "Overhead Press", "Power Clean"]
+			},
+
+			{
+				"name" : "Mock Meet",
+				"work" : [ "5x1 90% of 1RM", "3x1 Deadlift" ],
+				"exercises" : [ "Low Bar Squat", "Bench Press", "Deadlift"]
+			}
+		]
+		
+	},
+
+	{
+
+		"name" : "Linear Progression",
+		"author" : "None",
+		"source" : "None",
+		"customization" : "Required",
+		"level" : "Novice",
+		"days" : [ "3" ],
+		"schedules" : [ "AxBxAxx" ],
+
+		"workouts" : 
+		[
+			{
+				"name" : "Upper Push",
+				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Vertical Push", "Horizontal Push", "Legs", "Lower Back" ]
+			},
+
+			{
+				"name" : "Upper Pull",
+				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Vertical Pull", "Horizontal Pull", "Legs", "Lower Back" ]
+			}
+		]
+	},
+
+	{
+
+		"name" : "Push Pull",
+		"author" : "None",
+		"source" : "None",
+		"customization" : "Required",
+		"level" : "Novice",
+		"days" : [ "3", "4" ],
+		"schedules" : [ "AxBxAxx", "ABxABxx" ],
+
+		"workouts" : 
+		[
+			{
+				"name" : "Push",
+				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Vertical Push", "Horizontal Push", "Legs" ]
+			},
+
+			{
+				"name" : "Pull",
+				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Vertical Pull", "Horizontal Pull", "Lower Back" ]
+			}
+		]
+	},
+
+	{
+
+		"name" : "Power Hypertrophy Upper Lower",
+		"author" : "None",
+		"source" : "None",
+		"customization" : "Required",
+		"level" : "Intermediate",
+		"days" : [ "4" ],
+		"schedules" : [ "ABxABxx", "AxBxAxB" ],
+
+		"workouts" : 
+		[
+			{
+				"name" : "Upper Power",
+				"work" : [ "(1-5)x(1-5) Isotonics", "(1-5)x(2-10s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Vertical Push", "Horizontal Push", "Vertical Pull", "Horizontal Pull" ]
+			},
+
+			{
+				"name" : "Lower Power ",
+				"work" : [ "(1-5)x(1-5) Isotonics", "(1-5)x(2-10s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Legs", "Lower Back" ]
+			},
+
+			{
+				"name" : "Upper Hypertrophy",
+				"work" : [ "(1-5)x(5-12) Isotonics", "(1-5)x(10-24s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Vertical Push", "Horizontal Push", "Vertical Pull", "Horizontal Pull" ]
+			},
+
+			{
+				"name" : "Lower Hypertrophy",
+				"work" : [ "(1-5)x(5-12) Isotonics", "(1-5)x(10-24s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Legs", "Lower Back" ]
+			}
+		]
+	},
+
+	{
+
+		"name" : "Push Pull Legs",
+		"author" : "None",
+		"source" : "None",
+		"customization" : "Required",
+		"level" : "Intermediate",
+		"days" : [ "3", "4", "5", "6" ],
+		"schedules" : [ "AxBxCxx", "AxBxCxA", "ABCxABx", "ABCxABC" ],
+
+		"workouts" : 
+		[
+			{
+				"name" : "Push",
+				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Vertical Push", "Horizontal Push" ]
+			},
+
+			{
+				"name" : "Pull",
+				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Vertical Pull", "Horizontal Pull" ]
+			},
+
+			{
+				"name" : "Legs",
+				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Legs", "Lower Back" ]
+			}
+		]
+	},
+
+	{
+
+		"name" : "Volume Light Heavy",
+		"author" : "None",
+		"source" : "None",
+		"customization" : "Required",
+		"level" : "Intermediate",
+		"days" : [ "3" ],
+		"schedules" : [ "AxBxCxx" ],
+
+		"workouts" : 
+		[
+			{
+				"name" : "Volume",
+				"work" : [ "(3-5)x(5-12) Isotonics", "(3-5)x(10-24s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Vertical Push or Pull", "Horizontal Push or Pull", "Legs", "Lower Back" ]
+			},
+
+			{
+				"name" : "Light",
+				"work" : [ "(3-5)x(5-12) 80% of day A Isotonics", "(3-5)x(10-24s) 80% of day A Isometrics" ],
+				"exercises" : [ "Skill Work", "Vertical Push or Pull", "Horizontal Push or Pull" ]
+			},
+
+			{
+				"name" : "Heavy",
+				"work" : [ "(1-3)x(1-5) Isotonics", "(1-3)x(2-10s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Vertical Push or Pull", "Horizontal Push or Pull", "Legs", "Lower Back" ]
+			}
+		]
+	},
+
+	{
+
+		"name" : "One Lift A Day",
+		"author" : "None",
+		"source" : "None",
+		"customization" : "Required",
+		"level" : "Intermediate",
+		"days" : [ "4" ],
+		"schedules" : [ "ABCDxxx", "ABxCDxx", "AxBxCxD" ],
+
+		"workouts" : 
+		[
+			{
+				"name" : "Vertical",
+				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
+				"exercises" : [ "Vertical Push or Pull", "Vertical Accessories" ]
+			},
+
+			{
+				"name" : "Legs",
+				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
+				"exercises" : [ "Legs", "Legs Accessories" ]
+			},
+
+			{
+				"name" : "Horizontal",
+				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
+				"exercises" : [ "Horizontal Push or Pull", "Horizontal Accessories" ]
+			},
+
+			{
+				"name" : "Lower Back",
+				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
+				"exercises" : [ "Lower Back", "Lower Back Accessories" ]
+			}
+		]
+	}
+]

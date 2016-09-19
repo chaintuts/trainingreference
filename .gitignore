@@ -1,0 +1,12 @@
+# This file contains a list of project files that should not be pushed to the open source repository
+#
+# Author: Josh McIntyre
+#
+#
+
+# Do not include files with MongoDB authentication information
+src/api/auth.py
+src/storage/user.sh
+
+# Do not include built files
+bin/

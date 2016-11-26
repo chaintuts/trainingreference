@@ -7,7 +7,7 @@
 		"source" : "Starting Strength Basic Barbell Training, 3rd Edition",
 		"customization" : "Discouraged",
 		"level" : "Novice",
-		"days" : [ "3" ],
+		"days" : [ "3", "2" ],
 		"schedules" : [ "AxBxAxx" ],
 
 		"workouts" : 
@@ -100,7 +100,7 @@
 		"source" : "None",
 		"customization" : "Required",
 		"level" : "Novice",
-		"days" : [ "3" ],
+		"days" : [ "3", "2" ],
 		"schedules" : [ "AxBxAxx" ],
 
 		"workouts" : 
@@ -126,7 +126,7 @@
 		"source" : "None",
 		"customization" : "Required",
 		"level" : "Novice",
-		"days" : [ "3", "4" ],
+		"days" : [ "3", "4", "2" ],
 		"schedules" : [ "AxBxAxx", "ABxABxx" ],
 
 		"workouts" : 

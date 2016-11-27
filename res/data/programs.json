@@ -8,7 +8,7 @@
 		"customization" : "Discouraged",
 		"level" : "Novice",
 		"days" : [ "3", "2" ],
-		"schedules" : [ "AxBxAxx" ],
+		"schedules" : [ "AxBxAxx", "AxxBxxx" ],
 
 		"workouts" : 
 		[
@@ -101,7 +101,7 @@
 		"customization" : "Required",
 		"level" : "Novice",
 		"days" : [ "3", "2" ],
-		"schedules" : [ "AxBxAxx" ],
+		"schedules" : [ "AxBxAxx", "AxxBxxx" ],
 
 		"workouts" : 
 		[
@@ -127,7 +127,7 @@
 		"customization" : "Required",
 		"level" : "Novice",
 		"days" : [ "3", "4", "2" ],
-		"schedules" : [ "AxBxAxx", "ABxABxx" ],
+		"schedules" : [ "AxBxAxx", "ABxABxx", "AxxBxxx" ],
 
 		"workouts" : 
 		[
@@ -141,6 +141,32 @@
 				"name" : "Pull",
 				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
 				"exercises" : [ "Skill Work", "Vertical Pull", "Horizontal Pull", "Lower Back" ]
+			}
+		]
+	},
+
+	{
+
+		"name" : "Upper Lower",
+		"author" : "None",
+		"source" : "None",
+		"customization" : "Required",
+		"level" : "Intermediate",
+		"days" : [ "2", "3", "4" ],
+		"schedules" : [ "AxxBxxx", "AxBxAxx", "ABxABxx" ],
+
+		"workouts" : 
+		[
+			{
+				"name" : "Upper",
+				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Vertical Push", "Horizontal Push", "Vertical Pull", "Horizontal Pull" ]
+			},
+
+			{
+				"name" : "Lower",
+				"work" : [ "(1-5)x(1-12) Isotonics", "(1-5)x(2-24s) Isometrics" ],
+				"exercises" : [ "Skill Work", "Legs", "Lower Back" ]
 			}
 		]
 	},
@@ -164,7 +190,7 @@
 			},
 
 			{
-				"name" : "Lower Power ",
+				"name" : "Lower Power",
 				"work" : [ "(1-5)x(1-5) Isotonics", "(1-5)x(2-10s) Isometrics" ],
 				"exercises" : [ "Skill Work", "Legs", "Lower Back" ]
 			},

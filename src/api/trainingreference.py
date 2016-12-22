@@ -9,6 +9,7 @@ import web
 import pymongo
 import json
 import auth
+import re
 
 web.config.debug = True
 
@@ -125,7 +126,9 @@ def query_database(collection, key, value):
 
 	if collection == "Programs":
 		if key and value:
-			query = { key : value }
+			regex_string = ".*" + value + ".*";
+			regex = re.compile(regex_string, re.IGNORECASE)
+			query = { key : regex }
 			results = db.Programs.find(query, { "_id" : False })
 		else:
 			results = db.Programs.find({}, { "_id" : False })
@@ -135,7 +138,9 @@ def query_database(collection, key, value):
 
 	if collection == "Exercises":
 		if key and value:
-			query = { key : value }
+			regex_string = ".*" + value + ".*";
+			regex = re.compile(regex_string, re.IGNORECASE)
+			query = { key : regex }
 			results = db.Exercises.find(query, { "_id" : False })
 		else:
 			results = db.Exercises.find({}, { "_id" : False })

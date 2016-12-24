@@ -105,7 +105,7 @@ class suggest:
 
 		web.header("Content-Type", "text/html")
 
-		results = query_database(collection.title(), None, None, field=key)
+		results = query_database_distinct(collection.title(), key)
 		data = []
 		for result in results:
 			data.append(result)
@@ -145,21 +145,16 @@ class query:
 # Argument: collection
 # Argument: key
 # Argument: value
-# Argument: field
 # Yield: result
 #
 #
 def query_database(collection, key, value, field=None):
 
-	# First, build the projection
-	# If a field is specified for suggestion queries, only show that field
-	# Otherwise, show all fields other than the id
+	# Build the projection
+	# We don't want the user to see the unique database ID
 	#
 	#
-	if field:
-		projection = { "_id" : False, field : True }
-	else:
-		projection = { "_id" : False }
+	projection = { "_id" : False }
 
 	# Query the database on the specified collection
 	# Iterate over the results and yield
@@ -186,6 +181,36 @@ def query_database(collection, key, value, field=None):
 		else:
 			results = db.Exercises.find({}, projection)
 
+		for result in results:
+			yield result
+
+# This function handles queries for distinct values on the database
+#
+# Argument: collection
+# Argument: key
+# Yield: result
+#
+#
+def query_database_distinct(collection, key):
+
+	# Build the projection
+	# We don't want the user to see the unique database ID
+	#
+	#
+	projection = { "_id" : False }
+
+	# Query the database on the specified collection
+	# Use distinct to retrieve an array of distinct values for that key
+	# Iterate over the results and yield
+	#
+	#
+	if collection == "Programs":
+		results = db.Programs.distinct(key)
+		for result in results:
+			yield result
+
+	if collection == "Exercises":
+		results = db.Exercises.distinct(key)
 		for result in results:
 			yield result
 

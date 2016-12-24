@@ -108,6 +108,36 @@ function Client(config)
 			ajax.send();
 		}
 
+		/* This function retrieves suggestions
+		*
+		*/
+		querySuggestions : function querySuggestions()
+		{
+			var ajax = new XMLHttpRequest();
+
+			ajax.onreadystatechange = function()
+			{
+				if (ajax.readyState == 4 && ajax.status == 200)
+				{
+					var rawResults = ajax.responseText;
+					var results = JSON.parse(rawResults);
+					var keySelection = document.getElementById("key_select").value;
+
+					if (! (keySelection == ""))
+					{
+						markupSuggestions(results);
+					}
+				}
+			}
+
+			var collectionSelection = document.getElementById("collection_select").value;
+			var keySelection = document.getElementById("key_select").value;
+			var url = config.apiUrl + collectionSelection.toLowerCase() + "/suggestions/" + keySelection;
+			ajax.open("GET", url, true);
+
+			ajax.send();
+		}
+
 		/* This function marks up the collection select on the page
 		*
 		*/
@@ -132,7 +162,7 @@ function Client(config)
 		markupKeys : function markupKeys(results)
 		{
 			markup = "Search by: ";
-			markup += "<select id=\"key_select\">";
+			markup += "<select id=\"key_select\" onchange=\"client.buildSuggestions()\">";
 			markup += "<option value=\"\"></option>";
 			for (var i = 0; i < results.length; i++)
 			{
@@ -243,6 +273,27 @@ function Client(config)
 			document.getElementById("reference_results").innerHTML = markup;
 		}
 
+		/* This function marks up a datalist for suggestions
+		*
+		*/
+		markupSuggestions : function markupSuggestions(results)
+		{
+			markup = "<datalist id=\"suggestions\">";
+			for (var i = 0; i < results.length; i++)
+			{
+				/* Mark up suggestions
+				*
+				*/
+				markup += "<option value=\"";
+				markup += results[i];
+				markup += "\">";
+			}
+			markup += "</datalist>";
+
+			document.getElementById("suggestions_holder").innerHTML = markup;
+			document.getElementById("query_textbox").setAttribute("list", "suggestions");
+		}
+
 	/* Return a public interface to this module
 	*
 	*/
@@ -270,6 +321,14 @@ function Client(config)
 		buildResults : function buildResults()
 		{
 			query();
+		},
+
+		/* This function generates suggestions for the query string input
+		*
+		*/
+		buildSuggestions : function buildSuggestions()
+		{
+			querySuggestions();
 		}
 
 	};

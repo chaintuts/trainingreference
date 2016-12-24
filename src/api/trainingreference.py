@@ -50,6 +50,8 @@ class trainingreference:
 		result = results[0]
 		for key in result:
 			program_keys.append(key)
+		if "workouts" in program_keys: 	# Remove the extraneous workouts key from the programs
+			program_keys.remove("workouts")
 		
 		exercise_keys = []
 		results = db.Exercises.find({}, { "_id" : False })

@@ -6,7 +6,7 @@
 var clientConfig = {
 
 	/* This block defines configuration information for the client */
-	apiUrl : "http://jmcintyre.net/sites/trainingreference/trainingreference.py/"
+	apiUrl : "//jmcintyre.net/sites/trainingreference/trainingreference.py/"
 };
 
 /* This block initializes a Client instance */

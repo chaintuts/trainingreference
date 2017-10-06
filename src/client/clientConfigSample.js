@@ -7,7 +7,7 @@
 var clientConfig = function(){
 
 	/* This block defines configuration information for the client */
-	var apiUrl = "localhost/trainingreference/trainingreference.py/";
+	var apiUrl = "//yoursite.net/trainingreference/trainingreference.py/";
 }
 
 /* This block initializes a Client instance */

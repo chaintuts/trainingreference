@@ -3,8 +3,6 @@
 #
 # Author: Josh McIntyre
 #
-#
-
 MONGODB_USERNAME = "MyUser"
 MONGODB_PASSWORD = "MyPassword"
 

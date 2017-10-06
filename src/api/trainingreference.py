@@ -4,7 +4,6 @@
 #
 # Author: Josh McIntyre
 #
-
 import web
 import pymongo
 import json
@@ -14,8 +13,6 @@ import re
 web.config.debug = True
 
 # This block defines URL handling variables
-#
-#
 urls = (
 	"/", "trainingreference",
 	"/(programs|exercises)", "all",
@@ -24,22 +21,17 @@ urls = (
 	)
 
 # This block generates a database connection
-#
-#
 conn_string = "mongodb://" + auth.MONGODB_USERNAME + ":" + auth.MONGODB_PASSWORD + "@localhost/TrainingDB"
 connection = pymongo.MongoClient(conn_string)
 db = connection.TrainingDB
 
 # This class handles requests at the base URL of the API
-#
-#
 class trainingreference:
 
 	# This function handles GET requests at the base URL
 	# It returns collection, url, and key information
 	#
 	# Return: response
-	#
 	#
 	def GET(self):
 
@@ -68,15 +60,12 @@ class trainingreference:
 		return response
 
 # This class handles requests to see all items in a collection
-#
-#
 class all:
 
 	# This function handles GET requests for programs and exercises
 	#
 	# Argument: collection
 	# Return: response
-	#
 	#
 	def GET(self, collection):
 
@@ -92,8 +81,6 @@ class all:
 		return response
 
 # This class handles requests to query the database
-#
-#
 class suggest:
 
 	# This function handles GET requests for programs and exercises
@@ -101,7 +88,6 @@ class suggest:
 	# Argument: collection
 	# Argument: key
 	# Return: response
-	#
 	#
 	def GET(self, collection, key):
 
@@ -117,8 +103,6 @@ class suggest:
 		return response
 
 # This class handles requests for suggestions
-#
-#
 class query:
 
 	# This function handles GET requests for programs and exercises
@@ -127,7 +111,6 @@ class query:
 	# Argument: key
 	# Argument: value
 	# Return: response
-	#
 	#
 	def GET(self, collection, key, value):
 
@@ -149,19 +132,14 @@ class query:
 # Argument: value
 # Yield: result
 #
-#
 def query_database(collection, key, value, field=None):
 
 	# Build the projection
 	# We don't want the user to see the unique database ID
-	#
-	#
 	projection = { "_id" : False }
 
 	# Query the database on the specified collection
 	# Iterate over the results and yield
-	#
-	#
 	if collection == "Programs":
 		if key and value:
 			regex_string = ".*" + value + ".*";
@@ -192,19 +170,16 @@ def query_database(collection, key, value, field=None):
 # Argument: key
 # Yield: result
 #
-#
 def query_database_distinct(collection, key):
 
 	# Build the projection
 	# We don't want the user to see the unique database ID
-	#
 	#
 	projection = { "_id" : False }
 
 	# Query the database on the specified collection
 	# Use distinct to retrieve an array of distinct values for that key
 	# Iterate over the results and yield
-	#
 	#
 	if collection == "Programs":
 		results = db.Programs.distinct(key)
@@ -217,8 +192,6 @@ def query_database_distinct(collection, key):
 			yield result
 
 # This is the main entry point for the web service
-#
-#
 if __name__ == "__main__":
 
 	app = web.application(urls, globals())

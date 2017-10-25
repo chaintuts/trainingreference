@@ -30,9 +30,6 @@ class trainingreference:
 
 	# This function handles GET requests at the base URL
 	# It returns collection, url, and key information
-	#
-	# Return: response
-	#
 	def GET(self):
 
 		web.header("Content-Type", "text/html")
@@ -63,10 +60,6 @@ class trainingreference:
 class all:
 
 	# This function handles GET requests for programs and exercises
-	#
-	# Argument: collection
-	# Return: response
-	#
 	def GET(self, collection):
 
 		web.header("Content-Type", "text/html")
@@ -84,11 +77,6 @@ class all:
 class suggest:
 
 	# This function handles GET requests for programs and exercises
-	#
-	# Argument: collection
-	# Argument: key
-	# Return: response
-	#
 	def GET(self, collection, key):
 
 		web.header("Content-Type", "text/html")
@@ -106,12 +94,6 @@ class suggest:
 class query:
 
 	# This function handles GET requests for programs and exercises
-	#
-	# Argument: collection
-	# Argument: key
-	# Argument: value
-	# Return: response
-	#
 	def GET(self, collection, key, value):
 
 		web.header("Content-Type", "text/html")
@@ -126,12 +108,6 @@ class query:
 		return response
 
 # This function handles queries on the database
-#
-# Argument: collection
-# Argument: key
-# Argument: value
-# Yield: result
-#
 def query_database(collection, key, value, field=None):
 
 	# Build the projection
@@ -165,22 +141,15 @@ def query_database(collection, key, value, field=None):
 			yield result
 
 # This function handles queries for distinct values on the database
-#
-# Argument: collection
-# Argument: key
-# Yield: result
-#
 def query_database_distinct(collection, key):
 
 	# Build the projection
 	# We don't want the user to see the unique database ID
-	#
 	projection = { "_id" : False }
 
 	# Query the database on the specified collection
 	# Use distinct to retrieve an array of distinct values for that key
 	# Iterate over the results and yield
-	#
 	if collection == "Programs":
 		results = db.Programs.distinct(key)
 		for result in results:

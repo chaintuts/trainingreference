@@ -2,7 +2,6 @@
 #
 # Author: Josh McIntyre
 #
-#
 
 # Do not include files with MongoDB authentication information
 src/api/auth.py

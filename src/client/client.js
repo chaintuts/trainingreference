@@ -6,12 +6,9 @@
 function Client(config) 
 {
 
-	/* Define private functions for this module */
+	// Define private functions for this module */
 
-		/* This function queries the API root for collection information
-		*
-		* Return: results
-		*/
+		// This function queries the API root for collection information
 		queryCollections : function queryCollections()
 		{
 			var ajax = new XMLHttpRequest();
@@ -31,10 +28,7 @@ function Client(config)
 			ajax.send();
 		}
 
-		/* This function queries the API root for key information
-		*
-		* Return: results
-		*/
+		// This function queries the API root for key information
 		queryKeys : function queryKeys()
 		{
 			var ajax = new XMLHttpRequest();
@@ -64,10 +58,7 @@ function Client(config)
 			ajax.send();
 		}
 
-		/* This function queries the API based on the desired collection and keys
-		*
-		* Return: results
-		*/
+		// This function queries the API based on the desired collection and keys
 		query : function query()
 		{
 			var ajax = new XMLHttpRequest();
@@ -102,7 +93,7 @@ function Client(config)
 			ajax.send();
 		}
 
-		/* This function retrieves suggestions */
+		// This function retrieves suggestions
 		querySuggestions : function querySuggestions()
 		{
 			var ajax = new XMLHttpRequest();
@@ -130,7 +121,7 @@ function Client(config)
 			ajax.send();
 		}
 
-		/* This function marks up the collection select on the page */
+		// This function marks up the collection select on the page
 		markupCollections : function markupCollections(results)
 		{
 			markup = "Reference: ";
@@ -146,7 +137,7 @@ function Client(config)
 			document.getElementById("collection").innerHTML = markup;
 		}
 
-		/* This function marks up the key select on the page */
+		// This function marks up the key select on the page
 		markupKeys : function markupKeys(results)
 		{
 			markup = "Search by: ";
@@ -165,7 +156,7 @@ function Client(config)
 			document.getElementById("keys").innerHTML = markup;
 		}
 
-		/* This function marks up the results of a query on the Programs collection on the page */
+		// This function marks up the results of a query on the Programs collection on the page
 		markupPrograms : function markupPrograms(results)
 		{
 			markup = "";
@@ -173,7 +164,7 @@ function Client(config)
 			{
 				markup += "<table>";
 				
-				/* Mark up program metadata */
+				// Mark up program metadata
 				markup += "<tr><td>";
 				markup += "Name: " + results[i]["name"] + "<br>";
 				markup += "Author: " + results[i]["author"] + "<br>";
@@ -184,7 +175,7 @@ function Client(config)
 				markup += "Schedules: " + results[i]["schedules"].join(", ") + "<br>";
 				markup += "</td></tr>";
 
-				/* Mark up program data */
+				// Mark up program data
 				var workouts = results[i]["workouts"];
 				for (var c = 0; c < workouts.length; c++)
 				{
@@ -201,7 +192,7 @@ function Client(config)
 			document.getElementById("reference_results").innerHTML = markup;
 		}
 
-		/* This function marks up the results of a query on the Exercises collection on the page */
+		// This function marks up the results of a query on the Exercises collection on the page
 		markupExercises : function markupExercises(results)
 		{
 			markup = "";
@@ -209,14 +200,14 @@ function Client(config)
 			{
 				markup += "<table>";
 				
-				/* Mark up exercise metadata */
+				// Mark up exercise metadata
 				markup += "<tr><td>";
 				markup += "Name: " + results[i]["name"] + "<br>";
 				markup += "Categories: " + results[i]["categories"].join(", ")+ "<br>";
 				markup += "Equipment: " + results[i]["equipment"].join(", ") + "<br>";
 				markup += "</td></tr>";
 
-				/* Mark up exercise data */
+				// Mark up exercise data
 				if (results[i]["variations"] instanceof Array)
 				{
 					markup += "<tr><td>";
@@ -249,13 +240,13 @@ function Client(config)
 			document.getElementById("reference_results").innerHTML = markup;
 		}
 
-		/* This function marks up a datalist for suggestions */
+		// This function marks up a datalist for suggestions
 		markupSuggestions : function markupSuggestions(results)
 		{
 			markup = "<datalist id=\"suggestions\">";
 			for (var i = 0; i < results.length; i++)
 			{
-				/* Mark up suggestions */
+				// Mark up suggestions
 				markup += "<option value=\"";
 				markup += results[i];
 				markup += "\">";
@@ -266,28 +257,28 @@ function Client(config)
 			document.getElementById("query_textbox").setAttribute("list", "suggestions");
 		}
 
-	/* Return a public interface to this module */
+	// Return a public interface to this module
 	return {
 
-		/* This function generates the collection select */
+		// This function generates the collection select
 		buildCollectionSelect : function buildCollectionSelect()
 		{
 			queryCollections();
 		},
 
-		/* This function generates the key select */
+		// This function generates the key select
 		buildKeySelect : function buildKeySelect()
 		{
 			queryKeys();
 		},
 
-		/* This function generates the key select */
+		// This function generates the key select
 		buildResults : function buildResults()
 		{
 			query();
 		},
 
-		/* This function generates suggestions for the query string input */
+		// This function generates suggestions for the query string input
 		buildSuggestions : function buildSuggestions()
 		{
 			querySuggestions();

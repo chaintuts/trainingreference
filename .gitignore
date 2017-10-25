@@ -6,6 +6,7 @@
 # Do not include files with MongoDB authentication information
 src/api/auth.py
 src/storage/user.sh
+src/client/clientConfig.js
 
 # Do not include built files
 bin/

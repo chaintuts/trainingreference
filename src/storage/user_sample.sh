@@ -6,7 +6,7 @@
 #
 
 # This block creates the user and grants read privileges
-mongo --eval "db.getSiblingDB(\"TrainingDB\").addUser( \
+mongo --eval "db.getSiblingDB(\"TrainingDB\").createUser( \
 
 	{ \
 		\"user\" : \"MyUser\", \

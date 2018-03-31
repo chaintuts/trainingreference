@@ -9,6 +9,8 @@
 mongo --eval "db.getSiblingDB(\"TrainingDB\").dropDatabase()"
 
 # This block loads the data from .json files
-mongoimport --db TrainingDB --collection Exercises --type json --file exercises.json --jsonArray
-mongoimport --db TrainingDB --collection Programs --type json --file programs.json --jsonArray 
+mongoimport --db TrainingDB --collection FreeweightMovements --type json --file freeweight_movements.json --jsonArray
+mongoimport --db TrainingDB --collection BodyweightMovements --type json --file bodyweight_movements.json --jsonArray
+mongoimport --db TrainingDB --collection PremadePrograms --type json --file premade_programs.json --jsonArray 
+mongoimport --db TrainingDB --collection ProgramTemplates --type json --file program_templates.json --jsonArray 
 

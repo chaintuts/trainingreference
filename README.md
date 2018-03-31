@@ -26,8 +26,10 @@ Load the database
 Clean the build and data directories
 
 ### Features
-* Show all exercises or programs in a collection
-* Search exercises or programs based on metadata
+* Available collections: Premade Programs, Program Templates, Freeweight Movements, and Bodyweight Movements
+* Show all data in a collection
+* Search collections based on metadata like program/movement names, etc.
+* See metadata suggestions (all available metadata keys for a collection)
 * Return the results as JSON
 
 ### Requirements
@@ -42,5 +44,7 @@ ____________
 
 ### GET usage
 * See the root url / for collection, url, and key information
-* Visit /programs or /exercises to see all items
-* Visit /programs/key/value or /exercises/key/value to search by metadata
+* Visit a collection URL to see all data: /premade_programs, /program_templates, /freeweight_movements, /bodyweight_movements
+* Visit collection/key/value to query a collection based on desired metadata
+* Visit collection/suggestions/key to see all available metadata values for the desired key
+

@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # This file contains code that defines a RESTful web service
-# This service allows the searching of resistance training programs
+# This service allows the searching of resistance training information
+# Collections include premade training programs, program templates (for designing one's own program), 
+# freeweight movement patterns, and bodyweight movement patterns
 #
 # Author: Josh McIntyre
 #
@@ -10,14 +12,21 @@ import json
 import auth
 import re
 
+# Define important constants
 web.config.debug = True
+collection_map = { "premade_programs" : "PremadePrograms",
+		   "program_templates" : "ProgramTemplates",
+		   "freeweight_movements" : "FreeweightMovements",
+		   "bodyweight_movements" : "BodyweightMovements"
+		 }
+
 
 # This block defines URL handling variables
 urls = (
 	"/", "trainingreference",
-	"/(programs|exercises)", "all",
-	"/(programs|exercises)/suggestions/(.*)", "suggest",
-	"/(programs|exercises)/(.*)/(.*)", "query"
+	"/(premade_programs|program_templates|freeweight_movements|bodyweight_movements)", "all",
+	"/(premade_programs|program_templates|freeweight_movements|bodyweight_movements)/suggestions/(.*)", "suggest",
+	"/(premade_programs|program_templates|freeweight_movements|bodyweight_movements)/(.*)/(.*)", "query"
 	)
 
 # This block generates a database connection
@@ -34,22 +43,34 @@ class trainingreference:
 
 		web.header("Content-Type", "text/html")
 
-		program_keys = []
-		results = db.Programs.find({}, { "_id" : False })
+		premade_program_keys = []
+		results = db.PremadePrograms.find({}, { "_id" : False })
 		result = results[0]
-		for key in result:
-			program_keys.append(key)
-		if "workouts" in program_keys: 	# Remove the extraneous workouts key from the programs
-			program_keys.remove("workouts")
+		for key in result["meta"]:
+			premade_program_keys.append(key)
 		
-		exercise_keys = []
-		results = db.Exercises.find({}, { "_id" : False })
+		program_template_keys = []
+		results = db.ProgramTemplates.find({}, { "_id" : False })
 		result = results[0]
-		for key in result:
-			exercise_keys.append(key)
+		for key in result["meta"]:
+			program_template_keys.append(key)
 
-		data = { "Programs" : program_keys,
-			"Exercises" : exercise_keys
+		freeweight_movement_keys = []
+		results = db.FreeweightMovements.find({}, { "_id" : False })
+		result = results[0]
+		for key in result["meta"]:
+			freeweight_movement_keys.append(key)
+
+		bodyweight_movement_keys = []
+		results = db.BodyweightMovements.find({}, { "_id" : False })
+		result = results[0]
+		for key in result["meta"]:
+			bodyweight_movement_keys.append(key)
+
+		data = { "PremadePrograms" : premade_program_keys,
+			 "ProgramTemplates" : program_template_keys,
+			 "FreeweightMovements" : freeweight_movement_keys,
+			 "BodyweightMovements" : bodyweight_movement_keys
 			}
 
 		response = json.dumps(data)
@@ -59,12 +80,12 @@ class trainingreference:
 # This class handles requests to see all items in a collection
 class all:
 
-	# This function handles GET requests for programs and exercises
+	# This function handles GET requests for programs and movements
 	def GET(self, collection):
 
 		web.header("Content-Type", "text/html")
 
-		results = query_database(collection.title(), None, None)
+		results = query_database(collection, None, None)
 		data = []
 		for result in results:
 			data.append(result)
@@ -76,12 +97,12 @@ class all:
 # This class handles requests to query the database
 class suggest:
 
-	# This function handles GET requests for programs and exercises
+	# This function handles GET requests for programs and movements
 	def GET(self, collection, key):
 
 		web.header("Content-Type", "text/html")
 
-		results = query_database_distinct(collection.title(), key)
+		results = query_database_distinct(collection, key)
 		data = []
 		for result in results:
 			data.append(result)
@@ -93,12 +114,12 @@ class suggest:
 # This class handles requests for suggestions
 class query:
 
-	# This function handles GET requests for programs and exercises
+	# This function handles GET requests for programs and movements
 	def GET(self, collection, key, value):
 
 		web.header("Content-Type", "text/html")
 
-		results = query_database(collection.title(), key, value.title())
+		results = query_database(collection, key, value.title())
 		data = []
 		for result in results:
 			data.append(result)
@@ -116,26 +137,50 @@ def query_database(collection, key, value, field=None):
 
 	# Query the database on the specified collection
 	# Iterate over the results and yield
-	if collection == "Programs":
+	if collection == "premade_programs":
 		if key and value:
 			regex_string = ".*" + value + ".*";
 			regex = re.compile(regex_string, re.IGNORECASE)
-			query = { key : regex }
-			results = db.Programs.find(query, projection)
+			query = { "meta.%s" % key : regex }
+			results = db.PremadePrograms.find(query, projection)
 		else:
-			results = db.Programs.find({}, projection)
+			results = db.PremadePrograms.find({}, projection)
 
 		for result in results:
 			yield result
 
-	if collection == "Exercises":
+	if collection == "program_templates":
 		if key and value:
 			regex_string = ".*" + value + ".*";
 			regex = re.compile(regex_string, re.IGNORECASE)
-			query = { key : regex }
-			results = db.Exercises.find(query, projection)
+			query = { "meta.%s" % key : regex }
+			results = db.ProgramTemplates.find(query, projection)
 		else:
-			results = db.Exercises.find({}, projection)
+			results = db.ProgramTemplates.find({}, projection)
+
+		for result in results:
+			yield result
+
+	if collection == "freeweight_movements":
+		if key and value:
+			regex_string = ".*" + value + ".*";
+			regex = re.compile(regex_string, re.IGNORECASE)
+			query = { "meta.%s" % key : regex }
+			results = db.FreeweightMovements.find(query, projection)
+		else:
+			results = db.FreeweightMovements.find({}, projection)
+
+		for result in results:
+			yield result
+
+	if collection == "bodyweight_movements":
+		if key and value:
+			regex_string = ".*" + value + ".*";
+			regex = re.compile(regex_string, re.IGNORECASE)
+			query = { "meta.%s" % key : regex }
+			results = db.BodyweightMovements.find(query, projection)
+		else:
+			results = db.BodyweightMovements.find({}, projection)
 
 		for result in results:
 			yield result
@@ -150,13 +195,23 @@ def query_database_distinct(collection, key):
 	# Query the database on the specified collection
 	# Use distinct to retrieve an array of distinct values for that key
 	# Iterate over the results and yield
-	if collection == "Programs":
-		results = db.Programs.distinct(key)
+	if collection == "premade_programs":
+		results = db.PremadePrograms.distinct("meta.%s" % key)
 		for result in results:
 			yield result
 
-	if collection == "Exercises":
-		results = db.Exercises.distinct(key)
+	if collection == "program_templates":
+		results = db.ProgramTemplates.distinct("meta.%s" % key)
+		for result in results:
+			yield result
+
+	if collection == "freeweight_movements":
+		results = db.FreeweightMovements.distinct("meta.%s" % key)
+		for result in results:
+			yield result
+
+	if collection == "bodyweight_movements":
+		results = db.BodyweightMovements.distinct("meta.%s" % key)
 		for result in results:
 			yield result
 

@@ -14,19 +14,13 @@ import re
 
 # Define important constants
 web.config.debug = True
-collection_map = { "premade_programs" : "PremadePrograms",
-		   "program_templates" : "ProgramTemplates",
-		   "freeweight_movements" : "FreeweightMovements",
-		   "bodyweight_movements" : "BodyweightMovements"
-		 }
-
 
 # This block defines URL handling variables
 urls = (
 	"/", "trainingreference",
-	"/(premade_programs|program_templates|freeweight_movements|bodyweight_movements)", "all",
-	"/(premade_programs|program_templates|freeweight_movements|bodyweight_movements)/suggestions/(.*)", "suggest",
-	"/(premade_programs|program_templates|freeweight_movements|bodyweight_movements)/(.*)/(.*)", "query"
+	"/(premadeprograms|programtemplates|freeweightmovements|bodyweightmovements)", "all",
+	"/(premadeprograms|programtemplates|freeweightmovements|bodyweightmovements)/suggestions/(.*)", "suggest",
+	"/(premadeprograms|programtemplates|freeweightmovements|bodyweightmovements)/(.*)/(.*)", "query"
 	)
 
 # This block generates a database connection
@@ -137,7 +131,7 @@ def query_database(collection, key, value, field=None):
 
 	# Query the database on the specified collection
 	# Iterate over the results and yield
-	if collection == "premade_programs":
+	if collection == "premadeprograms":
 		if key and value:
 			regex_string = ".*" + value + ".*";
 			regex = re.compile(regex_string, re.IGNORECASE)
@@ -149,7 +143,7 @@ def query_database(collection, key, value, field=None):
 		for result in results:
 			yield result
 
-	if collection == "program_templates":
+	if collection == "programtemplates":
 		if key and value:
 			regex_string = ".*" + value + ".*";
 			regex = re.compile(regex_string, re.IGNORECASE)
@@ -161,7 +155,7 @@ def query_database(collection, key, value, field=None):
 		for result in results:
 			yield result
 
-	if collection == "freeweight_movements":
+	if collection == "freeweightmovements":
 		if key and value:
 			regex_string = ".*" + value + ".*";
 			regex = re.compile(regex_string, re.IGNORECASE)
@@ -173,7 +167,7 @@ def query_database(collection, key, value, field=None):
 		for result in results:
 			yield result
 
-	if collection == "bodyweight_movements":
+	if collection == "bodyweightmovements":
 		if key and value:
 			regex_string = ".*" + value + ".*";
 			regex = re.compile(regex_string, re.IGNORECASE)
@@ -195,22 +189,22 @@ def query_database_distinct(collection, key):
 	# Query the database on the specified collection
 	# Use distinct to retrieve an array of distinct values for that key
 	# Iterate over the results and yield
-	if collection == "premade_programs":
+	if collection == "premadeprograms":
 		results = db.PremadePrograms.distinct("meta.%s" % key)
 		for result in results:
 			yield result
 
-	if collection == "program_templates":
+	if collection == "programtemplates":
 		results = db.ProgramTemplates.distinct("meta.%s" % key)
 		for result in results:
 			yield result
 
-	if collection == "freeweight_movements":
+	if collection == "freeweightmovements":
 		results = db.FreeweightMovements.distinct("meta.%s" % key)
 		for result in results:
 			yield result
 
-	if collection == "bodyweight_movements":
+	if collection == "bodyweightmovements":
 		results = db.BodyweightMovements.distinct("meta.%s" % key)
 		for result in results:
 			yield result

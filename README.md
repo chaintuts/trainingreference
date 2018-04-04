@@ -44,7 +44,7 @@ ____________
 
 ### GET usage
 * See the root url / for collection, url, and key information
-* Visit a collection URL to see all data: /premade_programs, /program_templates, /freeweight_movements, /bodyweight_movements
+* Visit a collection URL to see all data: /premadeprograms, /programtemplates, /freeweightmovements, /bodyweightmovements
 * Visit collection/key/value to query a collection based on desired metadata
 * Visit collection/suggestions/key to see all available metadata values for the desired key
 

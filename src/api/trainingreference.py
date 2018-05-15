@@ -67,7 +67,7 @@ class trainingreference:
 			 "BodyweightMovements" : bodyweight_movement_keys
 			}
 
-		response = json.dumps(data)
+		response = json.dumps(data, indent=4)
 
 		return response
 
@@ -84,7 +84,7 @@ class all:
 		for result in results:
 			data.append(result)
 		
-		response = json.dumps(data)
+		response = json.dumps(data, indent=4)
 
 		return response
 
@@ -101,7 +101,7 @@ class suggest:
 		for result in results:
 			data.append(result)
 		
-		response = json.dumps(data)
+		response = json.dumps(data, indent=4)
 		
 		return response
 
@@ -118,7 +118,7 @@ class query:
 		for result in results:
 			data.append(result)
 		
-		response = json.dumps(data)
+		response = json.dumps(data, indent=4)
 
 		return response
 

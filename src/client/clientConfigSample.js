@@ -4,10 +4,10 @@
 * Author: Josh McIntyre
 */
 
-var clientConfig = function(){
+var clientConfig = {
 
 	// This block defines configuration information for the client
-	var apiUrl = "//yoursite.net/trainingreference/trainingreference.py/";
+	"apiUrl" : "//yoursite.net/trainingreference/trainingreference.py/"
 }
 
 // This block initializes a Client instance

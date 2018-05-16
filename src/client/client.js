@@ -75,10 +75,22 @@ function Client(config)
 
 					if (! (keySelection == ""))
 					{
-						if (collectionSelection == "Programs")
-							markupPrograms(results);
-						else
-							markupExercises(results);
+						if (collectionSelection == "ProgramTemplates")
+						{
+							markupProgramTemplates(results);
+						}
+						else if (collectionSelection == "PremadePrograms")
+						{
+							markupPremadePrograms(results);
+						}
+						else if (collectionSelection == "FreeweightMovements")
+						{
+							markupFreeweightMovements(results);
+						}
+						else if (collectionSelection == "BodyweightMovements")
+						{
+							markupBodyweightMovements(results);
+						}
 					}
 	
 				}
@@ -156,8 +168,8 @@ function Client(config)
 			document.getElementById("keys").innerHTML = markup;
 		}
 
-		// This function marks up the results of a query on the Programs collection on the page
-		markupPrograms : function markupPrograms(results)
+		// This function marks up the results of a query on the PremadePrograms collection on the page
+		markupPremadePrograms : function markupPremadePrograms(results)
 		{
 			markup = "";
 			for (var i = 0; i < results.length; i++)
@@ -166,23 +178,107 @@ function Client(config)
 				
 				// Mark up program metadata
 				markup += "<tr><td>";
-				markup += "Name: " + results[i]["name"] + "<br>";
-				markup += "Author: " + results[i]["author"] + "<br>";
-				markup += "Source: " + results[i]["source"] + "<br>";
-				markup += "Customization: " + results[i]["customization"] + "<br>";
-				markup += "Level: " + results[i]["level"] + "<br>";
-				markup += "Days: " + results[i]["days"].join(", ")+ "<br>";
-				markup += "Schedules: " + results[i]["schedules"].join(", ") + "<br>";
+				markup += "Name: " + results[i]["meta"]["name"] + "<br>";
+				markup += "Author: " + results[i]["meta"]["author"] + "<br>";
+				markup += "Type: " + results[i]["meta"]["name"] + "<br>";
+				markup += "Source: " + results[i]["meta"]["source"] + "<br>";
+				markup += "Level: " + results[i]["meta"]["level"] + "<br>";
 				markup += "</td></tr>";
 
 				// Mark up program data
-				var workouts = results[i]["workouts"];
-				for (var c = 0; c < workouts.length; c++)
+				var info = results[i]["info"];
+				
+				markup += "<tr><td>";
+				markup += "Overview: " + info["overview"];
+				markup += "</td></tr>";
+
+				markup += "<tr><td>";
+				markup += "Scheduling: " + info["scheduling"];
+				markup += "</td></tr>";
+
+				markup += "<tr><td>";
+				markup += "Progressing: " + info["progressing"];
+				markup += "</td></tr>";
+	
+				markup += "<tr><td>";
+				markup += "Workouts: <br><br>"
+				for (var key in info["workouts"])
+				{
+					markup += key + ": <br>";
+					markup += info["workouts"][key].join("<br> ");
+					markup += "<br><br>";
+				}
+				markup += "</td></tr>";
+
+				markup += "</table><br>";
+			}
+
+			document.getElementById("reference_results").innerHTML = markup;
+		}
+
+		// This function marks up the results of a query on the ProgramTemplates collection on the page
+		markupProgramTemplates : function markupProgramTemplates(results)
+		{
+			markup = "";
+			for (var i = 0; i < results.length; i++)
+			{
+				markup += "<table>";
+				
+				// Mark up program metadata
+				markup += "<tr><td>";
+				markup += "Name: " + results[i]["meta"]["name"] + "<br>";
+				markup += "Level: " + results[i]["meta"]["level"] + "<br>";
+				markup += "</td></tr>";
+
+				// Mark up program data
+				var info = results[i]["info"];
+				
+				markup += "<tr><td>";
+				markup += "Overview: " + info["overview"];
+				markup += "</td></tr>";
+
+				markup += "<tr><td>";
+				markup += "Scheduling: " + info["scheduling"];
+				markup += "</td></tr>";
+
+				markup += "<tr><td>";
+				markup += "Structuring: " + info["structuring"];
+				markup += "</td></tr>";
+
+				markup += "<tr><td>";
+				markup += "Work: " + info["work"];
+				markup += "</td></tr>";
+	
+
+				markup += "</table><br>";
+			}
+
+			document.getElementById("reference_results").innerHTML = markup;
+		}
+
+		// This function marks up the results of a query on the FreeweightMovements collection on the page
+		markupFreeweightMovements : function markupFreeweightMovements(results)
+		{
+			markup = "";
+			for (var i = 0; i < results.length; i++)
+			{
+				markup += "<table>";
+				
+				// Mark up metadata
+				markup += "<tr><td>";
+				markup += "Name: " + results[i]["meta"]["name"] + "<br>";
+				markup += "Categories: " + results[i]["meta"]["categories"].join(", ")+ "<br>";
+				markup += "</td></tr>";
+
+				// Mark up variation data
+				markup += "<tr><td>";
+				markup += "Main variations: <br><br>" + results[i]["main_variations"].join("<br> ");
+				markup += "</td></tr>";
+
+				if ("other_variations" in results[i])
 				{
 					markup += "<tr><td>";
-					markup += "Workout Name: " + workouts[c]["name"] + "<br>";
-					markup += "Work: " + workouts[c]["work"].join(", ") + "<br>";
-					markup += "Exercises: " + workouts[c]["exercises"].join(", ") + "<br>";
+					markup += "Other variations: <br><br>" + results[i]["other_variations"].join("<br>");
 					markup += "</td></tr>";
 				}
 
@@ -192,47 +288,24 @@ function Client(config)
 			document.getElementById("reference_results").innerHTML = markup;
 		}
 
-		// This function marks up the results of a query on the Exercises collection on the page
-		markupExercises : function markupExercises(results)
+		// This function marks up the results of a query on the BodyweightMovements collection on the page
+		markupBodyweightMovements : function markupBodyweightMovements(results)
 		{
 			markup = "";
 			for (var i = 0; i < results.length; i++)
 			{
 				markup += "<table>";
 				
-				// Mark up exercise metadata
+				// Mark up metadata
 				markup += "<tr><td>";
-				markup += "Name: " + results[i]["name"] + "<br>";
-				markup += "Categories: " + results[i]["categories"].join(", ")+ "<br>";
-				markup += "Equipment: " + results[i]["equipment"].join(", ") + "<br>";
+				markup += "Name: " + results[i]["meta"]["name"] + "<br>";
+				markup += "Categories: " + results[i]["meta"]["categories"].join(", ")+ "<br>";
 				markup += "</td></tr>";
 
-				// Mark up exercise data
-				if (results[i]["variations"] instanceof Array)
-				{
-					markup += "<tr><td>";
-					markup += "Variations: " + results[i]["variations"].join(", ");
-					markup += "</td></tr>";
-				}
-				else
-				{
-					markup += "<tr><td>";
-					markup += "Variations: None";
-					markup += "</td></tr>";
-				}
-
-				if (results[i]["progressions"] instanceof Array)
-				{
-					markup += "<tr><td>";
-					markup += "Progressions: " + results[i]["progressions"].join(", ");
-					markup += "</td></tr>";
-				}
-				else
-				{
-					markup += "<tr><td>";
-					markup += "Progressions: None";
-					markup += "</td></tr>";
-				}
+				// Mark up progression data
+				markup += "<tr><td>";
+				markup += "Progressions: <br><br>" + results[i]["progressions"].join("<br>");
+				markup += "</td></tr>";
 
 				markup += "</table><br>";
 			}

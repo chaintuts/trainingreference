@@ -37,7 +37,26 @@
 			"scheduling" : "Alternate Push/Pull workouts. Push/Pull workouts are full-body, so workouts should generally be done with 1-2 rest days in between sessions. However, these workouts may be done back-to-back depending on how much the chosen movement patterns overlap."
 		}
 	},
-	
+
+	{
+		"meta" :
+		{
+			"name" : "Full Body Split",
+			"level" : "Novice, Intermediate"
+		},
+		
+		"info" :
+		{
+			"overview" : "Full Body Split workouts focus on full-body training, but split up the movement patterns a bit for both upper and lower body. This template is useful for adding more variety and/or splitting up some of the training work that one would have to do each workout with a linear progression",
+ 
+			"structuring" : "Each workout contains a legs and/or lower back movement, plus roughly 1-3 upper body movements to fit the desired training goals",
+
+			"work" : "Full Body Splits typically focus on lower rep ranges, (around 5) with a few short sets (1-3) for main movements. However, accessory work or main work can be done for higher volume (sets of 5-12) to drive conditioning/hypertrophy goals.",
+
+			"scheduling" : "Alternate each full body workout; much like a push/pull or linear progression that has different workouts. There should be 1-2 rest days between each training session."
+		}
+	},
+
 	{
 		"meta" :
 		{

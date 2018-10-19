@@ -122,6 +122,21 @@ class query:
 
 		return response
 
+# This is a helper function that returns the database collection object
+# used to actually query the collection
+def get_db_collection(collection):
+
+	if collection == "premadeprograms":
+		db_collection = db.PremadeProgram
+	if collection == "programtemplates":
+		db_collection = db.ProgramTemplates
+	if collection == "freeweightmovements":
+		db_collection = db.FreeweightMovements
+	if collection == "bodyweightmovements":
+		db_collection = db.BodyweightMovements
+
+	return db_collection
+
 # This function handles queries on the database
 def query_database(collection, key, value, field=None):
 
@@ -131,53 +146,18 @@ def query_database(collection, key, value, field=None):
 
 	# Query the database on the specified collection
 	# Iterate over the results and yield
-	if collection == "premadeprograms":
-		if key and value:
-			regex_string = ".*" + value + ".*";
-			regex = re.compile(regex_string, re.IGNORECASE)
-			query = { "meta.%s" % key : regex }
-			results = db.PremadePrograms.find(query, projection)
-		else:
-			results = db.PremadePrograms.find({}, projection)
+	db_collection = get_db_collection(collection)
 
-		for result in results:
-			yield result
+	if key and value:
+		regex_string = ".*" + value + ".*";
+		regex = re.compile(regex_string, re.IGNORECASE)
+		query = { "meta.%s" % key : regex }
+		results = db_collection.find(query, projection)
+	else:
+		results = db_collection.find({}, projection)
 
-	if collection == "programtemplates":
-		if key and value:
-			regex_string = ".*" + value + ".*";
-			regex = re.compile(regex_string, re.IGNORECASE)
-			query = { "meta.%s" % key : regex }
-			results = db.ProgramTemplates.find(query, projection)
-		else:
-			results = db.ProgramTemplates.find({}, projection)
-
-		for result in results:
-			yield result
-
-	if collection == "freeweightmovements":
-		if key and value:
-			regex_string = ".*" + value + ".*";
-			regex = re.compile(regex_string, re.IGNORECASE)
-			query = { "meta.%s" % key : regex }
-			results = db.FreeweightMovements.find(query, projection)
-		else:
-			results = db.FreeweightMovements.find({}, projection)
-
-		for result in results:
-			yield result
-
-	if collection == "bodyweightmovements":
-		if key and value:
-			regex_string = ".*" + value + ".*";
-			regex = re.compile(regex_string, re.IGNORECASE)
-			query = { "meta.%s" % key : regex }
-			results = db.BodyweightMovements.find(query, projection)
-		else:
-			results = db.BodyweightMovements.find({}, projection)
-
-		for result in results:
-			yield result
+	for result in results:
+		yield result
 
 # This function handles queries for distinct values on the database
 def query_database_distinct(collection, key):
@@ -189,25 +169,12 @@ def query_database_distinct(collection, key):
 	# Query the database on the specified collection
 	# Use distinct to retrieve an array of distinct values for that key
 	# Iterate over the results and yield
-	if collection == "premadeprograms":
-		results = db.PremadePrograms.distinct("meta.%s" % key)
-		for result in results:
-			yield result
+	db_collection = get_db_collection(collection)
 
-	if collection == "programtemplates":
-		results = db.ProgramTemplates.distinct("meta.%s" % key)
-		for result in results:
-			yield result
+	results = db_collection.distinct("meta.%s" % key)
+	for result in results:
+		yield result
 
-	if collection == "freeweightmovements":
-		results = db.FreeweightMovements.distinct("meta.%s" % key)
-		for result in results:
-			yield result
-
-	if collection == "bodyweightmovements":
-		results = db.BodyweightMovements.distinct("meta.%s" % key)
-		for result in results:
-			yield result
 
 # This is the main entry point for the web service
 if __name__ == "__main__":

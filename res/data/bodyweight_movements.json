@@ -36,7 +36,7 @@
 			"One Leg L-sit", 
 			"L-sit", 
 			[ "Tuck V-sit", "Ring L-sit" ], 
-			"One Leg  V-sit",
+			[ "One Leg  V-sit", "Rings Turned Out L-sit" ],
 			"V-sit", 
 			"Manna"
 		]
@@ -73,7 +73,7 @@
 		[ 
 			[ "Assisted Chinups", "Negative Chinups" ],
 			"Chinups",
-			"Wide Chinups", 
+			[ "Wide Chinups", "Close Grip Chinups" ],
 			"Tuck L-hang Chinups", 
 			"One Leg L-Hang Chinups", 
 			"L-Hang Chinups", 
@@ -98,7 +98,8 @@
 			[ "Tuck L-sit Dips", "Ring Dips" ],
 			[ "One Leg L-sit Dips", "Ring Tuck L-sit Dips" ],
 			[ "L-sit Dips", "Ring One Leg L-sit Dips" ],
-			"Ring L-sit Dips" 
+			"Ring L-sit Dips", 
+			"Rings Turned Out Dips" 
 		]
 	},
 
@@ -117,8 +118,9 @@
 			"Decline Pushups", 
 			"Diamond Pushups", 
 			[ "Decline Diamond Pushups", "Ring Pushups" ], 
-			[ "Incline One Arm Pushups", "Rings wide Pushups" ], 
-			[ "One Arm Pushups", "Ring Archer Pushups" ]
+			[ "Straddle Incline One Arm Pushups", "Rings Wide Pushups" ], 
+			[ "Straddle One Arm Pushups", "Ring Archer Pushups" ],
+			[ "Strict One Arm Pushups", "Rings Turned Out Pushups" ]
 		]
 	
 	},

@@ -17,7 +17,8 @@
 		"other_variations" :
 		[
 			"Overhead Squat",
-			"Goblet Squat"
+			"Goblet Squat",
+            "Dumbell Squat"
 		]
 	},
 
@@ -36,7 +37,9 @@
 		
 		"other_variations" :
 		[
-			"Close-grip Bench Press"
+			"Close-grip Bench Press",
+            "Wide-grip Bench Press",
+            "Floor Press"
 		]
 		
 	},

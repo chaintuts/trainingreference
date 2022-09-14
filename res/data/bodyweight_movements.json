@@ -207,10 +207,11 @@
 		"progressions" : 
 		[ 
 			"Frog Stand", 
-			"Planche Lean", 
-			"Tuck Planche", 
-			"One Leg Planche", 
-			"Straddle Planche", 
+			"Planche Lean",
+			"One Leg Planche Lean",
+			["Tuck Planche", "Pseudo Planche Pushups"],
+			["One Leg Planche", "One Leg Pseudo Planche Pushups"],
+			["Straddle Planche", "Tuck Planche Pushups"],
 			"Planche"
 		]
 

@@ -10,7 +10,8 @@
 		
 		"progressions" : 
 		[ 
-			"Pike Pushup", 
+			"Pike Pushup",
+			"One Leg Pike Pushup",
 			"Pike Diamond Pushup", 
 			"Wall Bent Waist Handstand Pushup", 
 			"Wall Bent Waist Diamond Handstand Pushup", 
@@ -34,7 +35,9 @@
 			"One Leg Supported L-sit", 
 			"Tuck L-sit", 
 			"One Leg L-sit", 
-			"L-sit", 
+			"L-sit",
+			"Ring Tuck L-sit",
+			"Ring One Leg L-sit",
 			[ "Tuck V-sit", "Ring L-sit" ], 
 			[ "One Leg  V-sit", "Rings Turned Out L-sit" ],
 			"V-sit", 
@@ -52,13 +55,14 @@
 		
 		"progressions" : 
 		[ 
+			"Assisted Bodyweight Squat",
 			"Bodyweight Squat",
 			"Bulgarian Split Squat", 
 			"Assisted Pistol Squat", 
 			"Pistol Squat", 
 			"Shrimp Squat",
 			"Pause Pistol Squat",
-			"Pause Shrimp Squat" 
+			"Pause Shrimp Squat"
 		]
 
 	},
@@ -73,15 +77,18 @@
 		
 		"progressions" : 
 		[ 
-			[ "Assisted Chinups", "Negative Chinups" ],
+			[ "Assisted Chinups", "Band Assisted Chinups" ], 
+			"Negative Chinups",
 			"Chinups",
 			[ "Wide Chinups", "Close Grip Chinups" ],
 			"Tuck L-hang Chinups", 
 			"One Leg L-Hang Chinups", 
 			"L-Hang Chinups", 
 			"Archer Chinups", 
-			[ "Assisted One Arm Chinups", "Negative One Arm Chinups" ], 
-			"One Arm Chinups" 
+			[ "Assisted One Arm Chinups", "Band Assisted One Arm Chinups" ],
+			"Negative One Arm Chinups", 
+			"One Arm Chinups",
+			"Weighted Chinups"
 		]
 
 	},
@@ -90,14 +97,15 @@
 		"meta" :
 		{
 			"name" : "Dips",
-			"categories" : [ "Vertical Pushing" ]
+			"categories" : [ "Vertical Pushing", "Horizontal Pushing" ]
 		},
 		
 		"progressions" : 
 		[ 
-			"Assisted Dips", 
+			"Bench Dips",
+			[ "Assisted Dips", "Band Assisted Dips" ],
 			"Dips",
-			[ "Tuck L-sit Dips", "Ring Dips" ],
+			[ "Tuck L-sit Dips", "Ring Dips", "Straight Bar Dips" ],
 			[ "One Leg L-sit Dips", "Ring Tuck L-sit Dips" ],
 			[ "L-sit Dips", "Ring One Leg L-sit Dips" ],
 			"Ring L-sit Dips", 
@@ -115,7 +123,9 @@
 		
 		"progressions" : 
 		[ 
-			"Incline Pushups", 
+			"Knee Pushups",
+			[ "Incline Pushups", "Band Assisted Pushups" ],
+			"Negative Pushups",
 			"Pushups", 
 			"Decline Pushups", 
 			"Diamond Pushups", 
@@ -157,6 +167,7 @@
 		"progressions" : 
 		[ 
 			"Tuck Back Lever", 
+			"Band Assisted Tuck Back Lever",
 			"One Leg Back Lever", 
 			"Straddle Back Lever", 
 			"Back Lever" 
@@ -174,7 +185,8 @@
 		
 		"progressions" : 
 		[ 
-			"Tuck Front Lever", 
+			"Tuck Front Lever",
+			"Band Assisted Tuck Front Lever",
 			"One Leg Front Lever", 
 			"Straddle Front Lever", 
 			"Front Lever" 
@@ -206,9 +218,10 @@
 		
 		"progressions" : 
 		[ 
-			"Frog Stand", 
+			"Plank", 
 			"Planche Lean",
 			"One Leg Planche Lean",
+			"Frog Stand",
 			["Tuck Planche", "Pseudo Planche Pushups"],
 			["One Leg Planche", "One Leg Pseudo Planche Pushups"],
 			["Straddle Planche", "Tuck Planche Pushups"],

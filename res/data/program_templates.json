@@ -75,6 +75,44 @@
 			"scheduling" : "Alternate each full body workout; much like a push/pull or linear progression that has different workouts. There should be 1-2 rest days between each training session."
 		}
 	},
+	
+	{
+		"meta" :
+		{
+			"name" : "Minimalist Training",
+			"level" : "Novice, Intermediate"
+		},
+		
+		"info" :
+		{
+			"overview" : "Minimalist training is just what it sounds like - for the multi-sport athlete or just busy folks that still want some training. Training is purposely flexible.",
+						  
+			"structuring" : "Minimalist training can take the form of another one of these templates, such as a full-body, push pull, or one lift a day splits",
+						
+			"work" : "In general, the movements will be done for a small number of sets. Reps will depend on goals for each movement pattern and its consideration as main or accessory.",
+					
+			"scheduling" : "Scheduling will depend on the general template structure selected, and may be done as little or as often as needed for the trainee."
+		}
+	}, 
+
+	{
+		"meta" :
+		{
+			"name" : "One Lift a Day",
+			"level" : "Intermediate"
+		},
+		
+		"info" :
+		{
+			"overview" : "One lift a day training focuses on specific movement patterns and relevant accessories for each movement.",
+						  
+			"structuring" : "First, generally pick out 3-4 main movement patterns to focus on. Each workout will contain a main movement and several relevant accessories for each movement pattern.",
+						
+			"work" : "In general, the main movement will be done with a medium number of sets and low reps for strength gains. Accessory work will generally be done for higher volume.",
+					
+			"scheduling" : "Rotate through each movement day, performing most workouts back-to-back since there is little overlap between movement patterns. Aim for 1-3 rest days per week to recover from the high frequency of training."
+		}
+	},
 
 	{
 		"meta" :
@@ -117,25 +155,6 @@
 	{
 		"meta" :
 		{
-			"name" : "Volume Light Heavy",
-			"level" : "Intermediate"
-		},
-		
-		"info" :
-		{
-			"overview" : "Volume/Light/Heavy workouts fluctuate between high volume and high intensity training to stimulate growth.",
-						  
-			"structuring" : "The volume workout will focus on high volume work, with either high reps or a high number of sets. The middle light workout focuses on recovery, with light work sets just to get blood flowing and retain form. Heavy sets are designed to focus on intensity and strength, with low numbers of sets and reps.",
-						
-			"work" : "Volume work will be done with a few high-rep sets (3-5 sets of 8-12 reps), or a high-number of low-rep sets (5x5 is popular). Light workouts should be done with low sets and reps with light weights (focused on recovery and form). Heavy days should focus on a small nubmer of sets and reps with the maximum weight. 1 set of 5 or 3-5 sets of 1 can be used depending on goals.",
-					 
-			"scheduling" : "Volume/Light/Heavy workouts will be alternated, with 1-2 days of rest between each workout."
-		}
-	},
-	
-	{
-		"meta" :
-		{
 			"name" : "Upper Lower",
 			"level" : "Intermediate"
 		},
@@ -149,25 +168,6 @@
 			"work" : "Upper/Lower training typically focus on lower rep ranges, (around 5) with a few short sets (1-3) for main movements. However, like Push/Pull training, accessory work or main work can be done for higher volume (sets of 5-12) to drive conditioning/hypertrophy goals.",
 					
 			"scheduling" : "Upper and lower workouts will generally be alternated, with 1-2 rest days in between or workouts done back to back. It is also possible to rotate 2 upper / 1 lower workouts to focus more on one part of the body than another."
-		}
-	},
-	
-	{
-		"meta" :
-		{
-			"name" : "One Lift a Day",
-			"level" : "Intermediate"
-		},
-		
-		"info" :
-		{
-			"overview" : "One lift a day training focuses on specific movement patterns and relevant accessories for each movement.",
-						  
-			"structuring" : "First, generally pick out 3-4 main movement patterns to focus on. Each workout will contain a main movement and several relevant accessories for each movement pattern.",
-						
-			"work" : "In general, the main movement will be done with a medium number of sets and low reps for strength gains. Accessory work will generally be done for higher volume.",
-					
-			"scheduling" : "Rotate through each movement day, performing most workouts back-to-back since there is little overlap between movement patterns. Aim for 1-3 rest days per week to recover from the high frequency of training."
 		}
 	},
 
@@ -188,25 +188,6 @@
 					
 			"scheduling" : "Rotate through each muscle group day, performing most workouts back-to-back since there is little overlap between movement patterns. Aim for 1-3 rest days per week to recover from the high frequency of training."
 		}
-	},
-
-	{
-		"meta" :
-		{
-			"name" : "Minimalist Training",
-			"level" : "Novice, Intermediate"
-		},
-		
-		"info" :
-		{
-			"overview" : "Minimalist training is just what it sounds like - for the multi-sport athlete or just busy folks that still want some training.",
-						  
-			"structuring" : "Minimalist training can take the form of another one of these templates, such as a full-body split, push pull, or one lift a day",
-						
-			"work" : "In general, the main movement will be done with a medium number of sets and low reps for strength gains. Accessory work will generally be done for higher volume.",
-					
-			"scheduling" : "Scheduling will depend on the general template structure selected, and may be done as little or as often as needed for the trainee."
-		}
-	},   
+	} 
     
 ]

@@ -3,7 +3,6 @@
 		"meta":
 		{
 			"name" : "Starting Strength",
-			"type" : "Pre-made Program",
 			"author" : "Mark Rippetoe",
 			"source" : "Starting Strength Basic Barbell Training, 3rd Edition",
 			"level" : "Novice"
@@ -41,7 +40,6 @@
 		"meta": 
 		{
 			"name" : "The Texas Method",
-			"type" : "Pre-made Program",
 			"author" : "Mark Rippetoe",
 			"source" : "Practical Programming for Strength Training, 3rd Edition",
 			"level" : "Intermediate"
@@ -85,7 +83,6 @@
 		"meta": 
 		{
 			"name" : "The Texas Method for Powerlifting",
-			"type" : "Pre-made Program",
 			"author" : "Mark Rippetoe",
 			"source" : "Practical Programming for Strength Training, 3rd Edition",
 			"level" : "Intermediate"
@@ -119,6 +116,80 @@
 					"5 sets of 1 Squats",
 					"5 sets of 1 Bench Press",
 					"3 sets of 1 Deadlifts"
+				]
+			}
+		}
+		
+	},
+
+	{
+		"meta":
+		{
+			"name" : "/r/bodyweightfitness Recommended Routine",
+			"author" : "/r/bodyweightfitness community",
+			"source" : "/r/bodyweightfitness",
+			"level" : "Novice"
+		},
+
+		"info" : 
+		{
+			"overview" : "The Recommended Routine is the /r/bodyweightfitness community's novice linear progression program. The program here is simplified to focus on the core strength development work.",
+			"scheduling" : "Do full body workout with at least 1 rest day between workouts",
+			"progressing" : "Do each progression for 5-8 reps, adding 1 rep per set each session. When you reach 8 reps, move to a harder progression and do 5 reps. Sometimes, moving down to 3 reps may be necessary.",
+			
+			"workouts" :
+			{
+				"Workout A" : 
+				[
+					"Skill Work",
+					"3 sets of 5-8 Chinup Progression", 
+					"3 sets of 5-8 Squat Progression", 
+					"3 sets of 5-8 Dip Progression", 
+					"3 sets of 5-8 Hip Hinge/Lower Back Progression",
+					"3 sets of 5-8 Horizontal Row Progression",
+					"3 sets of 5-8 Pushup Progression"
+				]
+			}
+		}
+		
+	},
+	
+	{
+		"meta":
+		{
+			"name" : "Barbell Medicine Beginner Prescription",
+			"author" : "Dr. Jordan Feigenbaum and Dr. Austin Baraki",
+			"source" : "Barbell Medicine Website",
+			"level" : "Novice"
+		},
+
+		"info" : 
+		{
+			"overview" : "The Beginner Prescription is a novice program that introduces strength and conditioning.",
+			"scheduling" : "Do full body workout with at least 1 rest day between workouts, occasional back-to-back days are OK if needed",
+			"progressing" : "Weight selection will gradually increase based on RPE (rate of perceived exertion) prescribed",
+			
+			"workouts" :
+			{
+				"Workout A" : 
+				[
+					"3x4 @ RPE 6, 7, 8 Squat",
+					"3x10 @ RPE 6, 7, 8 Bench Press",
+					"3x8 @ RPE 6, 7, 8 Deadlift"
+				],
+				
+				"Workout B" :
+				[
+					"3x4 @ RPE 6, 7, 8 Overhead Press",
+					"3x7 @ RPE 6, 7, 8 Squat",
+					"3x10 @ RPE 6, 7, 8 Pendlay Rows"
+				],
+
+				"Workout C" :
+				[
+					"3x4 @ RPE 6, 7, 8 Deadlift",
+					"3x8 @ RPE 6, 7, 8 Bench Press",
+					"3x10 @ RPE 6, 7, 8 Squat"
 				]
 			}
 		}

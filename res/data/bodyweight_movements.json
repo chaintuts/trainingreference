@@ -1,26 +1,4 @@
 [
-
-	{
-
-		"meta" :
-		{
-			"name" : "Handstand Pushup",
-			"categories" : [ "Vertical Pushing" ]
-		},
-		
-		"progressions" : 
-		[ 
-			"Pike Pushup",
-			"One Leg Pike Pushup",
-			"Pike Diamond Pushup", 
-			"Wall Bent Waist Handstand Pushup", 
-			"Wall Bent Waist Diamond Handstand Pushup", 
-			"Wall Handstand Pushup", 
-			"Handstand Pushup" 
-		]
-
-	},
-
 	{
 
 		"meta" :
@@ -39,9 +17,28 @@
 			"Ring Tuck L-sit",
 			"Ring One Leg L-sit",
 			[ "Tuck V-sit", "Ring L-sit" ], 
-			[ "One Leg  V-sit", "Rings Turned Out L-sit" ],
+			[ "One Leg V-sit", "Rings Turned Out L-sit" ],
+			"Straddle L-sit",
 			"V-sit", 
 			"Manna"
+		]
+	},
+	
+	{
+
+		"meta" :
+		{
+			"name" : "Ring Support Hold",
+			"categories" : [ "Skill Work", "Vertical Pushing" ]
+		},
+
+		"progressions" : 
+		[ 
+			"Parallel Bar Support Hold",
+			"Assisted Ring Support Hold",
+			"Band Assisted Ring Support Hold",
+			"Ring Support Hold",
+			"Rings Turned Out Support Hold"
 		]
 	},
 	
@@ -85,6 +82,7 @@
 			"One Leg L-Hang Chinups", 
 			"L-Hang Chinups", 
 			"Archer Chinups", 
+			"Band Assisted One Arm Chinup Negatives",
 			[ "Assisted One Arm Chinups", "Band Assisted One Arm Chinups" ],
 			"Negative One Arm Chinups", 
 			"One Arm Chinups",
@@ -141,25 +139,6 @@
 
 		"meta" : 
 		{
-			"name" : "Rows",
-			"categories" : [ "Horizontal Pulling" ]
-		},
-		
-		"progressions" : 
-		[ 
-			"Inverted Rows", 
-			"Wide Inverted Rows", 
-			"One Leg Inverted Rows", 
-			"Elevated Inverted Rows", 
-			"Elevated One Leg Inverted Rows" 
-		]
-
-	},
-
-	{
-
-		"meta" : 
-		{
 			"name" : "Back Lever",
 			"categories" : [ "Lower Back", "Horizontal Pulling" ]
 		},
@@ -193,20 +172,24 @@
 		]
 
 	},
-
+	
 	{
-		"meta" :
+
+		"meta" : 
 		{
-			"name" : "Handstand",
-			"categories" : [ "Skill Work", "Vertical Pushing" ]
+			"name" : "Front Lever Rows",
+			"categories" : [ "Horizontal Pulling" ]
 		},
 		
 		"progressions" : 
 		[ 
-			"Wall Handstand", 
-			"Free Handstand" 
+			"Tuck Front Lever Rows",
+			"Band Assisted Tuck Front Lever Rows",
+			"One Leg Front Lever", 
+			"Straddle Front Lever", 
+			"Front Lever" 
 		]
-	
+
 	},
 
 	{
@@ -222,10 +205,97 @@
 			"Planche Lean",
 			"One Leg Planche Lean",
 			"Frog Stand",
-			["Tuck Planche", "Pseudo Planche Pushups"],
-			["One Leg Planche", "One Leg Pseudo Planche Pushups"],
-			["Straddle Planche", "Tuck Planche Pushups"],
+			"Tuck Planche",
+			"One Leg Planche",
+			"Straddle Planche",
 			"Planche"
+		]
+
+	},
+	
+		{
+		"meta" :
+		{
+			"name" : "Planche Pushups",
+			"categories" : [ "Lower Back", "Horizontal Pushing" ]
+		},
+		
+		"progressions" : 
+		[ 
+			"Pseudo Planche Pushups",
+			"One Leg Pseudo Planche Pushups",
+			"Tuck Planche Pushups"
+		]
+
+	},
+	
+	{
+		"meta" :
+		{
+			"name" : "Handstand",
+			"categories" : [ "Skill Work", "Vertical Pushing" ]
+		},
+		
+		"progressions" : 
+		[ 
+			"Wall Handstand", 
+			"Free Handstand" 
+		]
+	
+	},
+	
+	{
+		"meta" :
+		{
+			"name" : "Hip Hinge",
+			"categories" : [ "Lower Back" ]
+		},
+		
+		"progressions" : 
+		[ 
+			"Stiff Legged Bodyweight Deadlift", 
+			"Single Leg Bodyweight Deadlift" 
+		]
+	
+	},
+	
+	{
+
+		"meta" :
+		{
+			"name" : "Handstand Pushup",
+			"categories" : [ "Vertical Pushing" ]
+		},
+		
+		"progressions" : 
+		[ 
+			"Pike Pushup",
+			"One Leg Pike Pushup",
+			"Pike Diamond Pushup", 
+			"Wall Bent Waist Handstand Pushup", 
+			"Wall Bent Waist Diamond Handstand Pushup", 
+			"Wall Handstand Pushup", 
+			"Handstand Pushup" 
+		]
+
+	},
+
+
+	{
+
+		"meta" : 
+		{
+			"name" : "Rows",
+			"categories" : [ "Horizontal Pulling" ]
+		},
+		
+		"progressions" : 
+		[ 
+			"Inverted Rows", 
+			"Wide Inverted Rows", 
+			"One Leg Inverted Rows", 
+			"Elevated Inverted Rows", 
+			"Elevated One Leg Inverted Rows" 
 		]
 
 	}

@@ -47,7 +47,7 @@
 		"meta" :
 		{
 			"name" : "Deadlift",
-			"categories" : [ "Lower Back", "Horizontal Pulling" ]
+			"categories" : [ "Lower Back", "Horizontal Pulling", "Legs" ]
 		},
 
 		"main_variations" :  
@@ -59,7 +59,9 @@
 		"other_variations" :
 		[
 			"Deficit Deadlift",
-			"Dumbell Deadlift"
+			"Dumbell Deadlift",
+			"Stiff Legged Deadlift",
+			"Single Legged Deadlift"
 		]
 
 	},

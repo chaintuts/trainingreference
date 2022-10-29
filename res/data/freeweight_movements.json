@@ -36,6 +36,7 @@
 		
 		"other_variations" :
 		[
+			"Pause Bench Press",
 			"Close-grip Bench Press",
             "Wide-grip Bench Press",
             "Floor Press"
@@ -98,7 +99,8 @@
 		
 		"other_variations" :
 		[
-			"Seated Overhead Press"
+			"Seated Overhead Press",
+			"Seated Dumbell Overhead Press"
 		]
 	}
 

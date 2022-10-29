@@ -180,7 +180,6 @@ function Client(config)
 				markup += "<tr><td>";
 				markup += "Name: " + results[i]["meta"]["name"] + "<br>";
 				markup += "Author: " + results[i]["meta"]["author"] + "<br>";
-				markup += "Type: " + results[i]["meta"]["name"] + "<br>";
 				markup += "Source: " + results[i]["meta"]["source"] + "<br>";
 				markup += "Level: " + results[i]["meta"]["level"] + "<br>";
 				markup += "</td></tr>";
@@ -230,7 +229,7 @@ function Client(config)
 				markup += "Level: " + results[i]["meta"]["level"] + "<br>";
 				markup += "</td></tr>";
 
-				// Mark up program data
+				// Mark up program template data
 				var info = results[i]["info"];
 				
 				markup += "<tr><td>";

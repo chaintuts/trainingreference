@@ -127,7 +127,7 @@ class query:
 def get_db_collection(collection):
 
 	if collection == "premadeprograms":
-		db_collection = db.PremadeProgram
+		db_collection = db.PremadePrograms
 	if collection == "programtemplates":
 		db_collection = db.ProgramTemplates
 	if collection == "freeweightmovements":

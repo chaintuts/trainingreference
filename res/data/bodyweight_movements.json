@@ -47,7 +47,7 @@
 		"meta" :
 		{
 			"name" : "Squat",
-			"categories" : [ "Legs" ]
+			"categories" : [ "Legs", "Lower Back" ]
 		},
 		
 		"progressions" : 
@@ -145,6 +145,9 @@
 		
 		"progressions" : 
 		[ 
+			"Inverted Tuck Hang",
+			"Inverted Hang",
+			"German Hang",
 			"Tuck Back Lever", 
 			"Band Assisted Tuck Back Lever",
 			"One Leg Back Lever", 
@@ -164,6 +167,8 @@
 		
 		"progressions" : 
 		[ 
+			"Inverted Tuck Hang",
+			"Inverted Hang",
 			"Tuck Front Lever",
 			"Band Assisted Tuck Front Lever",
 			"One Leg Front Lever", 
